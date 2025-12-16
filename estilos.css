@@ -1,0 +1,330 @@
+/* =========================================
+   0. CORRECCIÓN GLOBAL DE ANCHO (IMPORTANTE)
+   ========================================= */
+/* Esta regla asegura que el padding y border se incluyan dentro del width, 
+   previniendo el desbordamiento y la barra de desplazamiento horizontal. */
+*, *::before, *::after {
+    box-sizing: border-box; 
+}
+
+/* =========================================
+   1. RESETS Y ESTILOS GLOBALES
+   ========================================= */
+html {
+    scroll-behavior: smooth; /* Habilita el scroll suave para la navegación de página única */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    background-color: #f8f8f8;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #000;
+}
+
+/* Títulos de Sección (h2) */
+main section h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 60px 0 40px 0;
+}
+
+
+/* =========================================
+   2. HEADER Y NAVEGACIÓN
+   ========================================= */
+header {
+    /* Hacemos el header fijo en la parte superior */
+    position: sticky; 
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nombre-sitio {
+    font-size: 1.8em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin-left: 25px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #a00; /* Un color de acento para el hover */
+}
+
+
+/* =========================================
+   3. SECCIÓN 1: HOME (IMAGEN CORREGIDA A BANNER)
+   ========================================= */
+#home {
+    /* **CORRECCIÓN DE ALTO**: Usamos 50% de la altura para hacerla angosta (banner) */
+    height: 85vh; 
+    
+    /* **CORRECCIÓN DE ANCHO**: Aseguramos 100% para llenar el espacio. 
+       El box-sizing agregado al inicio evita el desbordamiento. */
+    width: 100%; 
+    
+    overflow: hidden;
+    position: relative;
+    padding-top: 0;
+
+    /* **COMPENSACIÓN DEL HEADER**: Margen superior para el menú fijo/sticky */
+    margin-top: 70px; 
+}
+
+.imagen-principal {
+    width: 100%;
+    height: 100%;
+}
+
+.imagen-principal img {
+    width: 100%;
+    height: 100%;
+    /* Asegura que la imagen cubra todo el espacio sin distorsionarse */
+    object-fit: cover; 
+}
+
+
+/* =========================================
+   4. SECCIÓN 2: SOBRE MÍ (DESALINEACIÓN)
+   ========================================= */
+#sobre-mi {
+    padding: 60px 40px;
+}
+
+.contenedor-sobre-mi {
+    /* Solución a la desalineación: Usamos Flexbox */
+    display: flex; 
+    gap: 40px; 
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: flex-start; /* Alinea los elementos al inicio */
+    
+    font-family: 'Lato', sans-serif; 
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.foto-central {
+    flex: 0 0 50%; /* Ancho de la foto (35%) */
+    max-width: 350px;
+}
+
+.foto-central img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.texto-contenedor {
+    flex: 1; /* El texto ocupa el espacio restante */
+    padding-top: 10px;
+}
+
+.texto-centrado {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.texto-italico {
+    font-style: italic;
+    text-align: center;
+}
+
+
+/* =========================================
+   5. SECCIÓN 3: SESIONES
+   ========================================= */
+#sesiones {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenedor-banner {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.imagen-sesiones {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.banner-texto-superpuesto {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    text-align: center;
+    white-space: nowrap; /* Evita que el texto se rompa si es posible */
+}
+
+.texto-sesiones h3 {
+    font-size: 1.4em;
+    margin-top: 30px;
+    color: #a00; /* Resalta las preguntas */
+}
+
+.texto-sesiones p {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   6. SECCIÓN 4: GALERÍA
+   ========================================= */
+#galeria {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.galeria {
+    display: grid;
+    /* Diseño responsivo: mínimo 250px cada columna */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 300px; /* Altura fija para uniformidad */
+    display: block;
+    border-radius: 8px;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio */
+    transition: transform 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================
+   7. SECCIÓN 5: CONTACTO
+   ========================================= */
+.contacto {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 60px auto; 
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contacto a {
+    color: #a00; /* Color de acento para los enlaces */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contacto a:hover {
+    text-decoration: underline;
+}
+
+.contacto .icon {
+    font-size: 1.2em;
+    margin-right: 5px;
+    color: #a00;
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+footer {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* =========================================
+   9. RESPONSIVE DESIGN (Móviles)
+   ========================================= */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    nav li {
+        margin: 5px 10px;
+    }
+
+    /* Sobre Mí: Apilamos en móviles */
+    .contenedor-sobre-mi {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+    .foto-central {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+    .texto-contenedor {
+        width: 100%;
+    }
+    .texto-centrado {
+        text-align: left;
+    }
+    
+    /* Sesiones Banner */
+    .banner-texto-superpuesto {
+        font-size: 1.2em;
+        white-space: normal; /* Permitir el salto de línea en el texto del banner */
+        width: 80%;
+    }
+
+    main section h2 {
+        font-size: 2em;
+    }
+}
