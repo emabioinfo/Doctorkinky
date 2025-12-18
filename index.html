@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
 </head>
 <body>
     
@@ -88,13 +89,13 @@
                         En las suspensiones es normal sentir presión en ciertas zonas, pero  eso no implica que vaya a ser doloroso o incomodo y siempre ajustaremos según tu comodidad y tolerancia. 
                         La clave está en encontrar el equilibrio entre desafío y disfrute. 
                         A diferencia de la mayoría de las otras disciplinas bondage, en Shibari Kinbaku se usan cuerdas , hechas de fibra naturales de yute por cuestiones no solo de estética sino de seguridad ya que su resistencia y textura. 
-                        permiten que las ataduras se mantengan firmes una vez que te relajas en la ataduro.</p>
+                        permiten que las ataduras se mantengan firmes una vez que te relajas en la atadura.</p>
                     
                     <h3><em>¿Qué pasa con la seguridad?</em></h3>
                     <p>Shibari es una practica con riesgo asociado, esto quiere decir que no es una práctica con riesgo 0, es por esto que hay algunas precauciones que debes tomar 
                         al entrar en una sesión, tanto para tu seguridad física como para la seguridad emocional de ambos. 
                         Previamente a reunirnos te brindare material de seguridad para que puedas leerlo y luego hacerme las preguntas que necesites, y antes de la sesión repasarémos 
-                        algunas cosas básicas a tener en cuenta para que se produzcan lesiones antes de intentar nada. 
+                        algunas cosas básicas a tener en cuenta para que no se produzcan lesiones antes de intentar nada. 
                         Diferentes tipos de ataduras conllevan diferentes niveles de riesgo y ¡está perfectamente bien preferir un nivel de riesgo bajo o muy bajo! 
                         La lesión grave más probable que puede ocurrir en Shibari kinbaku es el daño del nervio radial a través de una fuerte compresión del brazo. 
                         Se sabe que ciertos ataduras conllevan este riesgo, mientras que otros es muy poco probable que lo hagan.
@@ -110,7 +111,7 @@
                         <br><br> Además de la seguridad física, también tendremos una charla adecuada sobre los límites personales en general: lo que te gustaría o no que sucediera durante la sesión. 
                         Preocupaciones, zonas del cuerpo que que no te gustaria que sean atadas, etc.<br><br> La negociación previa se realiza mediante un formulario que te brindaré. 
                         Cuando llegues a la sesión, tendremos una conversación en persona para confirmar cualquier cosa importante y verificar cómo se siente todo en ese momento antes de proceder con nada. 
-                        A pesar de tener estas consideraciones y hacer todo lo posible para mantener la practica segura, aceptar una sesión de SHibari BDSM con alguien, 
+                        A pesar de tener estas consideraciones y hacer todo lo posible para mantener la practica segura, aceptar una sesión de Shibari o BDSM con alguien, 
                         siempre conlleva cierto riesgo y por eso hablaremos sobre la "Gestion de Riesgo". Esto implica que como adulto consciente, aceptas cierto grado de riesgo y te comprometes a comunicarte 
                         tanto antes como durante la sesión si sientes que algo esta mal.
                         <br><br>
@@ -129,9 +130,9 @@
                         Depende de lo que vos quieras explorar. Si te interesa que haya un componente sexual o roleplay o fetichista, es importante hablarlo antes para definir 
                         hasta dónde querés llevar la experiencia y qué límites hay y si yo también estoy dispuesto a ofrecerlo.
                          
-                        Nunca voy a tocarte de manera sexual sin que lo hayamos conversado previamente. Además no es de mi interés realizar sesiones de Shibari como un si fuese un encuentro sexual convencional, 
+                        Nunca voy a tocarte de manera sexual sin que lo hayamos conversado previamente. Además no es de mi interés realizar sesiones de Shibari como si fuese un encuentro sexual convencional, 
                         sino como un servicio de exploración erótica y sensorial. 
-                        Mi interes radica mas en que la persona atada pueda explorar y redescubrir nuevas formas de sentir incluyendo, si asi lo desea, nuevas forma de explorar su sexualidad.
+                        Mi interés radica mas en que la persona atada pueda explorar y redescubrir nuevas formas de sentir incluyendo, si asi lo desea, nuevas forma de explorar su sexualidad.
                         <br><br> Por lo tanto si lo que buscas es un servicio de encuentro sexual con agregado de bondage no es el lugar indicado.
                         <br><br> Por otro lado, si preferís algo más estético, meditativo o simplemente sensorial, la sesión puede enfocarse en eso sin involucrar erotismo.</p>
                     
@@ -148,7 +149,7 @@
                         Si la idea es una sesión en pareja, incluso si es por una fantasia vouyer, eso sí se puede coordinar.<br><br> 
                         Si te da inseguridad venir sin compania, podemos encontrar otras formas de asegurarnos de que te sientas tranquile.</p>
                     
-                    <h3><em>Cómo puedo confiar en vos?</em></h3>
+                    <h3><em>¿Cómo puedo confiar en vos?</em></h3>
                     <p>Podés ver mi trabajo en mis redes y, si necesitás referencias, hay personas con las que he trabajado que pueden compartir su experiencia. Si te ayuda sentirte más seguro/a, preguntales directamente.</p>
                     
                     <h3><em>¿Qué pasa después de la sesión?</em></h3>
@@ -164,16 +165,28 @@
             <div class="galeria" id="galeria-contenedor"></div>
         </section>
 
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
         <script>
-        const contenedor = document.getElementById("galeria-contenedor");
-        const totalImagenes = 38;
+            const contenedor = document.getElementById("galeria-contenedor");
+            const totalImagenes = 38;
 
-        for (let i = 1; i <= totalImagenes; i++) {
-        const img = document.createElement("img");
-        img.src = `imagenes/galeria${i}.jpg`;
-        img.alt = "Kinbaku arte, fotografía artística con cuerdas.";
-        contenedor.appendChild(img);
-        }
+              for (let i = 1; i <= totalImagenes; i++) {
+        // 1. Creamos el enlace que abrirá la foto grande
+                    const enlace = document.createElement("a");
+                    enlace.href = `imagenes/galeria${i}.jpg`; // Ruta de la imagen
+                    enlace.setAttribute("data-lightbox", "mi-galeria"); // Esto crea la pasarela
+                    enlace.setAttribute("data-title", `Obra ${i} - Doctor Kinky`); // Título opcional
+
+                    // 2. Creamos la miniatura
+                    const img = document.createElement("img");
+                    img.src = `imagenes/galeria${i}.jpg`; // Mantenemos minúsculas
+                    img.alt = "Kinbaku arte, fotografía artística con cuerdas.";
+                    
+                    // 3. Metemos la imagen dentro del enlace y el enlace al contenedor
+                    enlace.appendChild(img);
+                    contenedor.appendChild(enlace);
+                }
         </script>
 
 
