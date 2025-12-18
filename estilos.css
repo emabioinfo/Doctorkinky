@@ -128,7 +128,7 @@ nav a:hover {
     gap: 40px; 
     max-width: 1000px;
     margin: 0 auto;
-    align-items: flex-start; /* Alinea los elementos al inicio */
+    align-items: center; /* Alinea los elementos al inicio */
     
     font-family: 'Lato', sans-serif; 
     line-height: 1.8;
@@ -136,7 +136,7 @@ nav a:hover {
 }
 
 .foto-central {
-    flex: 0 0 50%; /* Ancho de la foto (35%) */
+    flex: 0 0 50%; /* Ancho de la foto (50%) */
     max-width: 350px;
 }
 
@@ -149,7 +149,7 @@ nav a:hover {
 
 .texto-contenedor {
     flex: 1; /* El texto ocupa el espacio restante */
-    padding-top: 10px;
+   
 }
 
 .texto-centrado {
